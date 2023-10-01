@@ -67,8 +67,6 @@ const Layout = async ({
 
         <div className='grid grid-cols-1 md:grid-cols-3 gap-y-4 md:gap-x-4 py-6'>
           <ul className='flex flex-col col-span-2 space-y-6'>{children}</ul>
-
-          {/* info sidebar */}
           <div className='overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last'>
             <div className='px-6 py-4'>
               <p className='font-semibold py-3'>About r/{subreddit.name}</p>
@@ -93,7 +91,6 @@ const Layout = async ({
                   <dt className='text-gray-500'>You created this community</dt>
                 </div>
               ) : null}
-
               {subreddit.creatorId !== session?.user?.id ? (
                 <SubscribeLeaveToggle
                   isSubscribed={isSubscribed}
@@ -106,7 +103,7 @@ const Layout = async ({
                   variant: 'outline',
                   className: 'w-full mb-6',
                 })}
-                href={`r/${slug}/submit`}>
+                href={`/r/${slug}/submit`}>
                 Create Post
               </Link>
             </dl>
